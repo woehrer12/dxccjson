@@ -7,7 +7,8 @@ def getEntityCode(e):
 
 
 dxccList = []
-with open('dxcc-2020-02.csv', mode='r', encoding='utf8') as infile:
+with open('Python/helper/dxccjson/dxcc-2020-02.csv', mode='r', encoding='utf8') as infile:
+
     reader = csv.DictReader(infile)
     for row in reader:
         row['entityCode'] = int(row['entityCode'])
@@ -34,4 +35,4 @@ with open('dxcc-2020-02.csv', mode='r', encoding='utf8') as infile:
         dxccList.append(row)
 
 dxccList.sort(key=getEntityCode)
-print(json.dumps({'dxcc': dxccList}, ensure_ascii=False, sort_keys=True))
+#print(json.dumps({'dxcc': dxccList}, ensure_ascii=False, sort_keys=True))
